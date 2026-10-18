@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Narjis Lagmouha – Ingénieure en Génie Informatique, Cybersécurité</title>
+<meta name="description" content="Portfolio de Narjis Lagmouha, étudiante ingénieure en génie informatique à l’UIR, spécialisée en cybersécurité : SOC, SIEM, red team, cloud.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1b2a5e;
+  --navy-deep:#121c42;
+  --ink:#1c2233;
+  --muted:#5a6275;
+  --line:#dfe3ee;
+  --paper:#ffffff;
+  --wash:#f5f7fb;
+  --accent:#2f6fd6;
+  --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* Navigation */
+header.nav{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.brand{font-family:var(--serif);font-weight:600;color:var(--navy);text-decoration:none;font-size:1.1rem}
+.nav ul{display:flex;gap:22px;list-style:none;overflow-x:auto}
+.nav ul a{color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500;white-space:nowrap}
+.nav ul a:hover{color:var(--navy)}
+
+/* Hero */
+.hero{background:var(--navy);color:#fff;padding:88px 0 80px}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.05;letter-spacing:-.01em}
+.hero .role{margin-top:18px;font-size:1.2rem;color:#c9d3f2;max-width:34em}
+.hero .pitch{margin-top:20px;max-width:38em;color:#e4e9fa}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.btn{display:inline-block;padding:12px 22px;border-radius:6px;font-weight:600;text-decoration:none;font-size:.95rem;border:1px solid transparent}
+.btn.primary{background:#fff;color:var(--navy)}
+.btn.primary:hover{background:#e8edfb}
+.btn.ghost{border-color:#7f8fc4;color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+
+/* Sections */
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+section.alt{background:var(--wash)}
+h2{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:2rem;margin-bottom:28px}
+p.lead{max-width:44em;color:var(--ink)}
+.about-grid{display:grid;grid-template-columns:2fr 1fr;gap:48px}
+.facts dt{font-weight:600;color:var(--navy);font-size:.9rem}
+.facts dd{margin:0 0 14px;color:var(--muted)}
+
+/* Skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px}
+.skills h3{font-size:1rem;color:var(--navy);margin-bottom:10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none}
+.tags li{background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 13px;font-size:.88rem}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+.project{background:#fff;border:1px solid var(--line);border-left:4px solid var(--navy);border-radius:6px;padding:24px}
+.project h3{font-family:var(--serif);font-weight:600;color:var(--navy);font-size:1.2rem;margin-bottom:4px}
+.project .ctx{font-size:.88rem;color:var(--muted);margin-bottom:12px}
+.project p{font-size:.96rem;margin-bottom:14px}
+.project .tags li{background:var(--wash);font-size:.8rem;padding:2px 10px}
+.note{margin-top:26px;font-size:.9rem;color:var(--muted);max-width:46em}
+
+/* Experience: vertical rail, echoing the CV */
+.rail{position:relative;margin-left:10px;padding-left:36px;border-left:4px solid var(--navy)}
+.rail article{position:relative;padding-bottom:40px}
+.rail article:last-child{padding-bottom:0}
+.rail article::before{content:"";position:absolute;left:-47px;top:6px;width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--navy)}
+.rail h3{font-size:1.1rem;color:var(--navy)}
+.rail .org{font-weight:500;margin-bottom:6px}
+.rail p{color:var(--muted);max-width:44em}
+
+/* Education & languages */
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:48px}
+.list{list-style:none}
+.list li{padding:10px 0;border-bottom:1px solid var(--line)}
+.list li span{display:block;color:var(--muted);font-size:.9rem}
+
+/* Contact */
+.contact p{max-width:40em;margin-bottom:22px}
+.contact .btn.primary{background:var(--navy);color:#fff}
+.contact .btn.primary:hover{background:var(--navy-deep)}
+.contact .btn.ghost{border-color:var(--navy);color:var(--navy)}
+.contact .btn.ghost:hover{background:var(--wash)}
+
+footer{padding:28px 0;color:var(--muted);font-size:.85rem}
+
+@media (max-width:720px){
+  .about-grid{grid-template-columns:1fr;gap:24px}
+  .hero{padding:60px 0 56px}
+  section{padding:52px 0}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#accueil">Narjis Lagmouha</a>
+    <nav aria-label="Navigation principale">
+      <ul>
+        <li><a href="#apropos">À propos</a></li>
+        <li><a href="#competences">Compétences</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#experience">Expérience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil" style="border-bottom:0">
+  <div class="wrap">
+    <h1>Narjis Lagmouha</h1>
+    <p class="role">Étudiante ingénieure en génie informatique, orientée cybersécurité</p>
+    <p class="pitch">Je conçois et teste des dispositifs de défense : supervision SOC, analyse de logs, durcissement de systèmes et architectures cloud sécurisées. Je cherche un stage de fin d’études en cybersécurité.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projets">Voir mes projets</a>
+      <a class="btn ghost" href="CV_Narjis_Lagmouha.pdf">Télécharger mon CV</a>
+    </div>
+  </div>
+</section>
+
+<section id="apropos">
+  <div class="wrap about-grid">
+    <div>
+      <h2>À propos</h2>
+      <p class="lead">Après deux ans de classes préparatoires en génie informatique, j’ai intégré le cycle ingénieur de l’Université Internationale de Rabat (UIR). Mes stages et projets m’ont permis de travailler des deux côtés de la sécurité : monter une plateforme de détection d’incidents, puis simuler des attaques en laboratoire pour comprendre comment s’en protéger.</p>
+      <p class="lead" style="margin-top:14px">J’aime les sujets où il faut analyser, comprendre un système en profondeur et documenter clairement ce que l’on a fait.</p>
+    </div>
+    <dl class="facts">
+      <dt>Formation</dt><dd>Cycle ingénieur, UIR</dd>
+      <dt>Domaine</dt><dd>Cybersécurité, SOC, cloud</dd>
+      <dt>Localisation</dt><dd>Rabat, Maroc</dd>
+      <dt>Langues</dt><dd>Arabe, français, anglais</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="alt" id="competences">
+  <div class="wrap">
+    <h2>Compétences</h2>
+    <div class="skills">
+      <div>
+        <h3>Langages et développement</h3>
+        <ul class="tags"><li>Python</li><li>PHP</li><li>JavaScript</li><li>HTML/CSS</li><li>SQL</li></ul>
+      </div>
+      <div>
+        <h3>Cybersécurité</h3>
+        <ul class="tags"><li>Kali Linux</li><li>Metasploit</li><li>Hydra</li><li>Nmap</li><li>Wireshark</li><li>fail2ban</li><li>Active Directory</li><li>Wazuh</li><li>FortiGate</li></ul>
+      </div>
+      <div>
+        <h3>Outils et systèmes</h3>
+        <ul class="tags"><li>Linux</li><li>Windows Server</li><li>MySQL</li><li>Git</li><li>VS Code</li><li>Azure</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projets">
+  <div class="wrap">
+    <h2>Projets</h2>
+    <div class="projects">
+
+      <article class="project">
+        <h3>Plateforme SOC Wazuh et FortiGate</h3>
+        <p class="ctx">Stage technicien, ONEE</p>
+        <p>Mise en place d’une plateforme SOC pour la supervision et la détection d’incidents de sécurité, à partir de Wazuh et d’un pare-feu FortiGate.</p>
+        <ul class="tags"><li>Wazuh</li><li>FortiGate</li><li>SOC</li></ul>
+      </article>
+
+      <article class="project">
+        <h3>CyberSentinel : analyse de menaces par IA</h3>
+        <p class="ctx">Projet académique</p>
+        <p>Application web qui classe et analyse des menaces avec un LLM local (Ollama), ChromaDB et RAG, sans aucune transmission vers le cloud, dans une logique de conformité RGPD et HIPAA.</p>
+        <ul class="tags"><li>Python</li><li>FastAPI</li><li>Ollama</li><li>ChromaDB</li><li>SentenceTransformers</li></ul>
+      </article>
+
+      <article class="project">
+        <h3>Analyse de logs en temps réel (SIEM)</h3>
+        <p class="ctx">Projet UIR</p>
+        <p>Solution Big Data d’analyse et de visualisation de logs en temps réel, inspirée des systèmes SIEM, pour détecter les anomalies et anticiper les menaces.</p>
+        <ul class="tags"><li>Big Data</li><li>SIEM</li><li>Visualisation</li></ul>
+      </article>
+
+      <article class="project">
+        <h3>Sécurité des systèmes d’exploitation</h3>
+        <p class="ctx">Projet académique, laboratoire isolé</p>
+        <p>Déploiement d’un environnement d’entreprise (Ubuntu et Windows Server 2019 avec Active Directory), simulation d’une chaîne d’attaque complète puis durcissement multicouche.</p>
+        <ul class="tags"><li>Kali</li><li>Hydra</li><li>Metasploit</li><li>fail2ban</li></ul>
+      </article>
+
+      <article class="project">
+        <h3>Framework Command &amp; Control (C2)</h3>
+        <p class="ctx">Projet académique, usage pédagogique</p>
+        <p>Framework C2 développé from scratch pour simuler des scénarios red team en laboratoire : gestion de sessions d’agents, exécution de commandes distantes, canal chiffré.</p>
+        <ul class="tags"><li>Python</li><li>Sockets</li><li>AES</li></ul>
+      </article>
+
+      <article class="project">
+        <h3>Analyse de fuites de mots de passe sur Azure</h3>
+        <p class="ctx">Projet académique, cloud</p>
+        <p>Architecture Azure (Web App, Function App, Logic App, Key Vault) qui évalue la robustesse des mots de passe, détecte les fuites et génère un rapport PDF avec un score de sécurité.</p>
+        <ul class="tags"><li>Azure</li><li>Key Vault</li><li>Node.js</li></ul>
+      </article>
+
+      <article class="project">
+        <h3>Application VoIP</h3>
+        <p class="ctx">Stage ouvrier, REDAL</p>
+        <p>Conception d’une solution de communication vocale sur IP (SIP/RTP) avec gestion des appels, sécurisation des données et interface simple d’usage.</p>
+        <ul class="tags"><li>SIP</li><li>RTP</li><li>VoIP</li></ul>
+      </article>
+
+    </div>
+    <p class="note">Les projets d’attaque (C2, chaîne SSH vers ransomware) ont été réalisés dans un environnement de laboratoire isolé, à but uniquement pédagogique. Les données des organisations où j’ai effectué mes stages ne sont pas publiées.</p>
+  </div>
+</section>
+
+<section class="alt" id="experience">
+  <div class="wrap">
+    <h2>Expérience</h2>
+    <div class="rail">
+      <article>
+        <h3>Stage technicien</h3>
+        <p class="org">Office National de l’Électricité et de l’Eau Potable (ONEE)</p>
+        <p>Mise en place d’une plateforme SOC basée sur Wazuh et FortiGate pour la supervision et la détection d’incidents de sécurité.</p>
+      </article>
+      <article>
+        <h3>Stage ouvrier</h3>
+        <p class="org">REDAL, siège social, Rabat</p>
+        <p>Développement d’une application VoIP (SIP/RTP) avec gestion des appels, sécurisation des données et interface intuitive.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="formation">
+  <div class="wrap two">
+    <div>
+      <h2>Formation</h2>
+      <ul class="list">
+        <li>Cycle ingénieur, génie informatique<span>Université Internationale de Rabat (UIR)</span></li>
+        <li>Classes préparatoires, génie informatique<span>Université Internationale de Rabat (UIR)</span></li>
+        <li>Baccalauréat, sciences physiques</li>
+      </ul>
+    </div>
+    <div>
+      <h2>Langues et qualités</h2>
+      <ul class="list">
+        <li>Arabe<span>Courant (langue maternelle)</span></li>
+        <li>Français<span>Courant</span></li>
+        <li>Anglais<span>Bon niveau</span></li>
+      </ul>
+      <ul class="tags" style="margin-top:20px"><li>Esprit analytique</li><li>Autonomie</li><li>Travail en équipe</li><li>Adaptabilité</li><li>Écoute</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="alt contact" id="contact" style="border-bottom:0">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p>Je recherche un stage de fin d’études en cybersécurité (SOC, sécurité offensive ou défensive, cloud). Écrivez-moi, je réponds rapidement.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:narjis.lagmouha@uir.ac.ma">narjis.lagmouha@uir.ac.ma</a>
+      <a class="btn ghost" href="https://github.com/narjislagmouha">GitHub</a>
+      <a class="btn ghost" href="https://www.linkedin.com/">LinkedIn</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 Narjis Lagmouha. Rabat, Maroc.</div>
+</footer>
+
+</body>
+</html>
